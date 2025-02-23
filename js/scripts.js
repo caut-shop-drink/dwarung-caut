@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const whatsappPopup = document.getElementById('whatsapp-popup');
     const closeWhatsappPopup = document.querySelector('.close-whatsapp-popup');
     const whatsappForm = document.getElementById('whatsapp-form');
-    const phoneNumber = "6287855379985"; // Replace with your WhatsApp number
+    const phoneNumber = "6287854275441"; // Replace with your WhatsApp number
     let orderList = [];
 
     // Handle adding items to cart
@@ -20,18 +20,52 @@ document.addEventListener('DOMContentLoaded', function() {
                 const itemName = item.dataset.name;
                 const itemPrice = item.dataset.price;
                 const itemQuantity = parseInt(item.querySelector('.item-quantity').value);
-                const existingItemIndex = orderList.findIndex(orderItem => orderItem.name === itemName);
+                Swal.fire({
+                    title: 'Konfirmasi',
+                    text: `Apakah Anda yakin ingin menambahkan ${itemQuantity} x ${itemName} ke keranjang?`,
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Ya, tambahkan!',
+                    cancelButtonText: 'Batal',
+                    customClass: {
+                        confirmButton: 'swal2-confirm',
+                        cancelButton: 'swal2-cancel'
+                    },
+                    showClass: {
+                        popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                        popup: 'animate__animated animate__fadeOutUp'
+                    }
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        const existingItemIndex = orderList.findIndex(orderItem => orderItem.name === itemName);
 
-                if (existingItemIndex !== -1) {
-                    orderList[existingItemIndex].quantity += itemQuantity;
-                } else {
-                    const orderItem = { name: itemName, price: itemPrice, quantity: itemQuantity };
-                    orderList.push(orderItem);
-                }
+                        if (existingItemIndex !== -1) {
+                            orderList[existingItemIndex].quantity += itemQuantity;
+                        } else {
+                            const orderItem = { name: itemName, price: itemPrice, quantity: itemQuantity };
+                            orderList.push(orderItem);
+                        }
 
                 updateCart();
-                alert(`${itemQuantity} x ${itemName} added to order.`);
-                cartFloat.style.display = 'block'; // Show floating cart icon
+                        Swal.fire({
+                            title: 'Berhasil!',
+                            text: `${itemQuantity} x ${itemName} berhasil ditambahkan ke keranjang.`,
+                            icon: 'success',
+                            showConfirmButton: false,
+                            timer: 1500,
+                            position: 'center',
+                            showClass: {
+                                popup: 'animate__animated animate__zoomIn'
+                            },
+                            hideClass: {
+                                popup: 'animate__animated animate__zoomOut'
+                            }
+                        });
+                        cartFloat.style.display = 'block'; // Show floating cart icon
+                    }
+                });
             });
         });
     }

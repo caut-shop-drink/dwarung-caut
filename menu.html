@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
     <style>
         .card {
             border: none;
@@ -66,12 +67,30 @@
                 transform: translateY(0);
             }
         }
+
+        .swal2-confirm {
+            background-color: #007bff !important; /* Initial background color for confirm button */
+            color: #fff !important; /* Initial text color for confirm button */
+        }
+
+        .swal2-cancel {
+            background-color: #dc3545 !important; /* Initial background color for cancel button */
+            color: #fff !important; /* Initial text color for cancel button */
+        }
+
+        .swal2-confirm:hover {
+            background-color: #0056b3 !important; /* Background color on hover for confirm button */
+        }
+
+        .swal2-cancel:hover {
+            background-color: #c82333 !important; /* Background color on hover for cancel button */
+        }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
-            <a class="navbar-brand" href="#">Warung<i style="color:#ff69b4 ;">Ca'ut</i></a>
+            <a class="navbar-brand" href="#"><b>Warung</b><i style="color:#ff69b4 ;">Ca'ut</i></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -88,14 +107,14 @@
         </nav>
     </header>
     <main class="container mt-5 pt-5">
-        <h1 class="text-center mb-5">Menu Kami</h1>
+        <h1 class="text-center mb-5"><b>Menu</b><i style="color: #ff69b4;">Kami</i></h1>
         <div class="row" id="menu">
             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100 shadow-sm menu-item" data-name="Nasi Goreng" data-price="20000">
-                    <img src="images/Nasi-Goreng-4-b-scaled.jpg" class="card-img-top" alt="Nasi Goreng" data-toggle="modal" data-target="#imageModal">
+                <div class="card h-100 shadow-sm menu-item" data-name="Es Bucin" data-price="5000">
+                    <img src="images/esBucin.jpg" class="card-img-top" alt="Es Bucin" data-toggle="modal" data-target="#imageModal">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Nasi Goreng</h5>
-                        <p class="card-text">Price: Rp 20,000</p>
+                        <h5 class="card-title">Es Bucin</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 5,000</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
                             <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
                             <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
@@ -104,11 +123,11 @@
                 </div>
             </div>
             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100 shadow-sm menu-item" data-name="Mie Goreng" data-price="15000">
-                    <img src="images/mie.jpg" class="card-img-top" alt="Mie Goreng" data-toggle="modal" data-target="#imageModal">
+                <div class="card h-100 shadow-sm menu-item" data-name="Pop Ice" data-price="2500">
+                    <img src="images/Popice.jpg" class="card-img-top" alt="Pop Ice" data-toggle="modal" data-target="#imageModal">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Mie Goreng</h5>
-                        <p class="card-text">Price: Rp 15,000</p>
+                        <h5 class="card-title">Pop Ice</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 2,500</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
                             <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
                             <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
@@ -117,11 +136,11 @@
                 </div>
             </div>
             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100 shadow-sm menu-item" data-name="Ayam Goreng" data-price="25000">
-                    <img src="images/Resep-Ayam-goreng-tulang-lunak.jpg" class="card-img-top" alt="Ayam Goreng" data-toggle="modal" data-target="#imageModal">
+                <div class="card h-100 shadow-sm menu-item" data-name="Cireng Isi" data-price="1000">
+                    <img src="images/cirengisii.jpg" class="card-img-top" alt="Cireng Isi" data-toggle="modal" data-target="#imageModal">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Ayam Goreng</h5>
-                        <p class="card-text">Price: Rp 25,000</p>
+                        <h5 class="card-title">Cireng Isi</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 1,000</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
                             <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
                             <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
@@ -130,11 +149,137 @@
                 </div>
             </div>
             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100 shadow-sm menu-item" data-name="Sate Ayam" data-price="30000">
-                    <img src="images/th.jpg" class="card-img-top" alt="Sate Ayam" data-toggle="modal" data-target="#imageModal">
+                <div class="card h-100 shadow-sm menu-item" data-name="Es Campur" data-price="5000">
+                    <img src="images/escampur.jpg" class="card-img-top" alt="Es Campur" data-toggle="modal" data-target="#imageModal">
                     <div class="card-body d-flex flex-column">
-                        <h5 class="card-title">Sate Ayam</h5>
-                        <p class="card-text">Price: Rp 30,000</p>
+                        <h5 class="card-title">Es Campur</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 5,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Piscok" data-price="1000">
+                    <img src="images/piscok.jpg" class="card-img-top" alt="Piscok" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Piscok</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 1,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Roti Goreng" data-price="3000">
+                    <img src="images/rotigoreng.jpg" class="card-img-top" alt="Roti Goreng" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Roti Goreng</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 3,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Risol Mayo" data-price="2000">
+                    <img src="images/risolmayo.jpg" class="card-img-top" alt="Risol Mayo" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Risol Mayo</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 2,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Kentang Goreng" data-price="5000">
+                    <img src="images/kentang.jpg" class="card-img-top" alt="Kentang Goreng" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Kentang Goreng</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 5,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Bola Keju" data-price="2000">
+                    <img src="images/bolakeju.jpg" class="card-img-top" alt="Bola Keju" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Bola Keju</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 2,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Corn Dog" data-price="5000">
+                    <img src="images/corndog.jpg" class="card-img-top" alt="Corn Dog" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Corn Dog</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 5,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Sosis Kecil" data-price="2000">
+                    <img src="images/sosiskecil.jpg" class="card-img-top" alt="Sosis Kecil" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Sosis Kecil</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 2,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Nugget Love" data-price="1000">
+                    <img src="images/nuggetlove.jpg" class="card-img-top" alt="Nugget Love" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Nugget Love</h5>
+                        <p class="card-text" style="color: #ff69b4;">Rp 1,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Moci" data-price="1000">
+                    <img src="images/moci.jpg" class="card-img-top" alt="Moci" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Moci</h5>
+                        <p class="card-text">Rp 1,000</p>
                         <div class="mt-auto d-flex justify-content-between align-items-center">
                             <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
                             <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
@@ -182,6 +327,7 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         // Script to handle image click and show in modal
         document.addEventListener('DOMContentLoaded', function() {

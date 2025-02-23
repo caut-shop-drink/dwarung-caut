@@ -44,7 +44,7 @@ nav ul li a:hover {
 }
 
 .hero-image {
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0)), url('../images/guma-landscape-cafe-1.jpg');
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(255, 255, 255, 0)), url('../images/bg4.jpg');
     background-size: cover;
     background-position: center;
     height: 300px;
