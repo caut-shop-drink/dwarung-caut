@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        .card {
+            border: none;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img-top {
+            border-radius: 10px 10px 0 0;
+            transition: transform 0.3s, filter 0.3s;
+            cursor: pointer;
+        }
+
+        .card-img-top:hover {
+            transform: scale(1.05);
+            filter: brightness(0.9);
+        }
+
+        .modal-dialog-centered {
+            display: flex;
+            align-items: center;
+            min-height: calc(100% - 1rem);
+        }
+
+        .modal-content {
+            width: auto;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .close-modal-img {
+            font-size: 1.5rem;
+            color: #000;
+            opacity: 0.5;
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .close-modal-img:hover {
+            opacity: 1;
+            transform: scale(1.2);
+            color: #ff69b4; /* Change color to pink on hover */
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
+            <a class="navbar-brand" href="#">Warung<i style="color:#ff69b4 ;">Ca'ut</i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#menu">Menu</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main class="container mt-5 pt-5">
+        <h1 class="text-center mb-5">Menu Kami</h1>
+        <div class="row" id="menu">
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Nasi Goreng" data-price="20000">
+                    <img src="images/Nasi-Goreng-4-b-scaled.jpg" class="card-img-top" alt="Nasi Goreng" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Nasi Goreng</h5>
+                        <p class="card-text">Price: Rp 20,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Mie Goreng" data-price="15000">
+                    <img src="images/mie.jpg" class="card-img-top" alt="Mie Goreng" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Mie Goreng</h5>
+                        <p class="card-text">Price: Rp 15,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Ayam Goreng" data-price="25000">
+                    <img src="images/Resep-Ayam-goreng-tulang-lunak.jpg" class="card-img-top" alt="Ayam Goreng" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Ayam Goreng</h5>
+                        <p class="card-text">Price: Rp 25,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+                <div class="card h-100 shadow-sm menu-item" data-name="Sate Ayam" data-price="30000">
+                    <img src="images/th.jpg" class="card-img-top" alt="Sate Ayam" data-toggle="modal" data-target="#imageModal">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Sate Ayam</h5>
+                        <p class="card-text">Price: Rp 30,000</p>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <input type="number" class="item-quantity form-control" min="1" value="1" style="width: 60px;">
+                            <button class="btn btn-pink add-to-order"><i class="fas fa-plus"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Tambahkan item menu lainnya di sini -->
+        </div>
+    </main>
+
+    <!-- Modal for Image -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Menu Image</h5>
+                    <i type="button" class="close-modal-img" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </i>
+                </div>
+                <div class="modal-body p-0">
+                    <img src="" id="modalImage" class="img-fluid" alt="Menu Image">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Cart Icon -->
+    <div id="cart-float" class="cart-float" style="display: none;">
+        <i class="fas fa-shopping-cart" style="margin-left: 25%; margin-top: 30%;"></i>
+    </div>
+
+    <!-- Cart Popup -->
+    <div id="cart-popup" class="cart-popup">
+        <div class="popup-content">
+            <span class="close close-cart-popup">&times;</span>
+            <h2>Keranjang</h2>
+            <ul id="cart-items" class="list-group"></ul>
+            <button id="send-order-button" class="btn btn-success mt-3">Pesan Sekarang</button>
+        </div>
+    </div>
+
+    <script src="js/scripts.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Script to handle image click and show in modal
+        document.addEventListener('DOMContentLoaded', function() {
+            const imageModal = document.getElementById('imageModal');
+            const modalImage = document.getElementById('modalImage');
+
+            $('#imageModal').on('show.bs.modal', function(event) {
+                const button = $(event.relatedTarget); // Button that triggered the modal
+                const imgSrc = button.attr('src'); // Extract info from data-* attributes
+                modalImage.src = imgSrc;
+            });
+
+            $('#imageModal').on('hidden.bs.modal', function() {
+                modalImage.src = '';
+            });
+        });
+    </script>
+</body>
+</html>

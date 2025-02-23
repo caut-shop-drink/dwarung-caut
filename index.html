@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Warung Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg fixed-top">
+            <a class="navbar-brand" href="#">Warung<i style="color:#ff69b4 ;">Ca'ut</i></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="menu.html">Menu</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about-us">Tentang Kami</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#address">Alamat</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1>Welcome to Warung<i style="color: #ff9cce;">Ca'ut</i></h1>
+            <a href="menu.html" class="btn btn-pink text-white mt-3">Daftar Menu</a>
+        </div>
+    </div>
+    <main class="container mt-5 pt-5">
+        <div class="card-container">
+            <section id="about-us" class="about-us text-center card">
+                <div class="card-content">
+                    <h2>About Us</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Culpa, molestiae reiciendis vitae laboriosam placeat obcaecati quaerat fuga. Excepturi, est dolorem ea quaerat ipsa voluptates autem voluptatum facere accusamus aut dolorum laboriosam corporis nostrum nihil. Harum ullam ab error libero quos neque sint! Rem qui temporibus facere modi, placeat corporis maxime praesentium quaerat repellendus perferendis. Molestiae dolor provident, dolorem ab animi possimus adipisci. Iusto, vero omnis. Cupiditate asperiores veniam debitis nostrum tempora temporibus nesciunt pariatur eveniet, voluptatum corporis ducimus ratione dolor consequuntur quidem sint. Facilis labore cupiditate laborum eaque dicta natus quibusdam quidem iure magnam, facere veritatis illum maiores voluptas enim saepe a consequatur excepturi ea eum optio soluta quod corrupti. Exercitationem aspernatur nam ab alias aut temporibus iure debitis amet explicabo accusamus doloribus provident dolores quasi ipsam a, ea ducimus dolor dolorem nobis! Culpa ad repellat inventore dicta nobis nihil. Dolores tempora commodi repellat, porro enim nemo ducimus blanditiis rem perferendis suscipit ea quae totam autem, nisi dolore facilis harum provident veritatis libero nesciunt fuga. Cumque nihil aliquam maiores et voluptatem deserunt incidunt unde veniam. Reiciendis, culpa obcaecati numquam incidunt sint sunt perspiciatis est magnam iure ipsam aliquid atque saepe quibusdam corrupti beatae autem! Maxime a velit nulla. Unde, maiores.</p>
+                </div>
+            </section>
+            <section id="address" class="address text-center card mb-5" >
+                <div class="card-content">
+                    <h2>Address</h2>
+                    <p>Feel free to reach out to us for any inquiries or orders.</p>
+                    <div class="contact-info">
+                        <p><i class="fas fa-map-marker-alt"></i> 123 Main Street, Jakarta, Indonesia</p>
+                        <p><i class="fas fa-phone-alt"></i> +62 123-456-7890</p>
+                        <p><i class="fas fa-envelope"></i> info@warung.com</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="bg-dark text-white text-center py-3">
+        <p>&copy; 2023 Warung. All rights reserved.</p>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <div id="whatsapp-float" class="whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- WhatsApp Popup Form -->
+    <div id="whatsapp-popup" class="whatsapp-popup">
+        <div class="popup-content">
+            <span class="close close-whatsapp-popup">&times;</span>
+            <h3>Order Sekarang</h3>
+            <form id="whatsapp-form">
+                <div class="form-group">
+                    <input type="text" id="wa-name" class="form-control" placeholder="Nama">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="wa-message" class="form-control" placeholder="Pesan">
+                </div>
+                <div class="form-group">
+                    <input type="text" id="wa-alamat" class="form-control" placeholder="Alamat">
+                </div>
+                <button type="submit" class="btn btn-success">Kirim</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
